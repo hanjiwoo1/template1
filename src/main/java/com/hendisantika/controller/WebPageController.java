@@ -1,5 +1,7 @@
 package com.hendisantika.controller;
 
+import com.hendisantika.repository.UserRepository;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,13 +17,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class WebPageController {
+
+    UserRepository userRepository;
     @GetMapping("/")
     public String index() {
         return "dashboard";
     }
 
     @GetMapping("/login")
-    public String login() {
+    public String login(HttpSession session) {
+//        session.setAttribute();
         return "login";
     }
 

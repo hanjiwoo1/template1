@@ -1,4 +1,4 @@
-package com.hendisantika.config;
+ package com.hendisantika.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -59,7 +59,7 @@ public class WebSecurityConfig {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .requestMatchers("/login", "/register", "/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon" +
+                .requestMatchers("/user/**","/**", "/login", "/register", "/css/**", "/js/**", "/images/**", "/webjars/**", "/favicon" +
                         ".ico").permitAll()
                 .anyRequest().authenticated()
                 .and()
